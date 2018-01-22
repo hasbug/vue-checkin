@@ -6,13 +6,13 @@
 
 > 日历的代码基于[Arguiwu的日历](https://github.com/Arguiwu/calendar)修改
 
-## Build Setup
+## 安装
 
 ``` bash
 npm install vue-checkin --save-dev
 
 ```
-
+## 使用
 ```javascript
 
 // main.js
@@ -24,23 +24,38 @@ Vue.use(Vuecheckin)
 ```
 
 ```vue
-//***.vue
+<!-- ***.vue -->
 <vue-checkin :checkin="checkInData" @checkIn="checkIn" @setMonth="getCheckInData"></vue-checkin>
 ```
 
-#### props
+#### Attributes
 
-需要传入已经签到的数据，数据大概如:
+需要传入已经签到的数据，数据如（数组）:
 
 ```javascript
 checkInData:[
     {
-        "time": "2017-09-05 08:46",  //日期
-        "amount": 4 //所得金币
+        "time": "2018-01-12 08:52",  //日期
+        "amount": 3 //所得金币
     },
     {
-        "time": "2017-09-04 09:51",
+        "time": "2018-01-07 08:52",
+        "amount": 10 
+    },
+    {
+        "time": "2018-01-06 08:46", 
+        "amount": 6
+    },
+    {
+        "time": "2018-01-05 09:51",
         "amount": 3
     },
 ]
 ```
+
+#### Event
+
+getCheckInData(date,time)  //返回当前日历年月（date,字符串,例如:2018/01）和日历上现实的开始时间和结束时间(time,数组,['2017/12/31', '2018/02/02'])
+
+checkIn   //你的点击签到方法回调
+
