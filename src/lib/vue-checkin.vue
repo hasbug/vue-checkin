@@ -238,7 +238,7 @@
                         this.hasCheckin = true;
                     }
 
-                    if(new Date(index).getTime() == new Date(_ymd).getTime()) {
+                    if(new Date(index.replace(/-/g, "/")).getTime() == new Date(_ymd).getTime()) {
                         // console.log('已经签到')
                         return true;
                     }
@@ -248,7 +248,7 @@
 
             doCheck (d){
                 var dString= new Date().getFullYear()+'/'+(new Date().getMonth()+1)+'/'+new Date().getDate();
-                if(new Date(d).getTime() == new Date(dString).getTime()){
+                if(new Date(d.replace(/-/g, "/")).getTime() == new Date(dString).getTime()){
                     return true;
                 }
                 return false;
