@@ -1,7 +1,7 @@
 {
   "name": "vue-checkin",
   "description": "A Vue.js project for checkin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "hasbug <hasbug@qq.com>",
   "license": "MIT",
   "private": false,

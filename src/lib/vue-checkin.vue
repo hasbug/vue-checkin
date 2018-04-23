@@ -118,7 +118,7 @@
 
             getGold (thisDay) {
                 for(let i in this.checkin) {
-                    var d=new Date(this.checkin[i].time);
+                    var d=new Date(this.checkin[i].time.replace(/-/g, '/'));
                     var _ymd = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
 
                     if(new Date(thisDay).getTime() == new Date(_ymd).getTime()) {
@@ -231,14 +231,14 @@
                 for(let i in this.checkin) {
                     var todayDate=new Date();
                     var today = todayDate.getFullYear()+'/'+(todayDate.getMonth()+1)+'/'+todayDate.getDate();
-                    var d=new Date(this.checkin[i].time);
+                    var d=new Date(this.checkin[i].time,replace(/-/g, '/'));
                     var _ymd = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
                     if(new Date(today).getTime()==new Date(_ymd).getTime()){
                         //今日已经签到
                         this.hasCheckin = true;
                     }
 
-                    if(new Date(index.replace(/-/g, "/")).getTime() == new Date(_ymd).getTime()) {
+                    if(new Date(index).getTime() == new Date(_ymd).getTime()) {
                         // console.log('已经签到')
                         return true;
                     }
@@ -248,7 +248,7 @@
 
             doCheck (d){
                 var dString= new Date().getFullYear()+'/'+(new Date().getMonth()+1)+'/'+new Date().getDate();
-                if(new Date(d.replace(/-/g, "/")).getTime() == new Date(dString).getTime()){
+                if(new Date(d).getTime() == new Date(dString).getTime()){
                     return true;
                 }
                 return false;
