@@ -231,7 +231,7 @@
                 for(let i in this.checkin) {
                     var todayDate=new Date();
                     var today = todayDate.getFullYear()+'/'+(todayDate.getMonth()+1)+'/'+todayDate.getDate();
-                    var d=new Date(this.checkin[i].time,replace(/-/g, '/'));
+                    var d=new Date(this.checkin[i].time.replace(/-/g, '/'));
                     var _ymd = d.getFullYear()+'/'+(d.getMonth()+1)+'/'+d.getDate();
                     if(new Date(today).getTime()==new Date(_ymd).getTime()){
                         //今日已经签到
