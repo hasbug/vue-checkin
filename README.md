@@ -9,7 +9,7 @@
 ## 安装
 
 ``` bash
-npm install vue-checkin --save-dev
+npm install vue-checkin --save
 
 ```
 ## 使用
